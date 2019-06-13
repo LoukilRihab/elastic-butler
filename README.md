@@ -1,22 +1,21 @@
 # Elastic Butler
 
-Elastic butler were born at **Oi** telecomunication company as a **open source alternative** to [Elastic Stack Alerting tool](https://www.elastic.co/products/stack/alerting).
+Elastic butler was born at **Oi** telecomunication company as an **open source alternative** to [Elastic Stack Alerting tool](https://www.elastic.co/products/stack/alerting).
 
-With butler you get notified if your data has a pattern set by you.
+With butler, you get notified if your data has a pattern set by you.
 
-- Notify me by mail if there are more than 10 fail login attempts in the last 20 minutes
-- Notify me by if we sell more than 1000 iphones in the last day
+- Notify me by email if there are more than 10 fail login attempts in the last 20 minutes
+- Notify me by email if we sold more than 1000 iphones in the last day
 
 You are free to create your own [recipes](#recipes) and [notification types](#creating-senders).
 
 ## Get Started
 
-Elastic butler will store the [recipes](#recipes) and the execution result at a Elastic Search index, so before start check the configuration file
- **config/env.json** and set up you store configurations.
+Elastic butler will store the [recipes](#recipes) and the execution result at an Elastic Search index, so before you start, check the configuration file **config/env.json** and set up you store configurations.
 
 Create your [recipes](#recipes) than start butler.
 
-You can also use the [sandbox](#sandbox) to do your first test, it will provide to you a elastic search and kibana instances running on docker.
+You can also use the [sandbox](#sandbox) to do your first test, it will provide you an elastic search and kibana instances running on docker.
 
 ```bash
 npm start
@@ -29,14 +28,13 @@ Butler uses the @timestamp field to do the "period" filter. [Make sure your inde
 
 ## Configuration
 
-A file **config/env.json** exists to allow you to provide configuration for this application. This includes many things like sender configuration and data
-store configuration.
+A file **config/env.json** exists to allow you to provide configuration for this application. This includes many things like sender configuration and data store configuration.
 
-Elastic butler will store the [recipes](#recipes) and the execution result at a Elastic Search index this means you can build dashboards and visualizations about your alerts! You could even alert on your alerts if you wanted to. 
+Elastic butler will store the [recipes](#recipes) and the execution result at an Elastic Search index. This means you can build dashboards and visualizations about your alerts! You can even make an alert on your alerts if you want to. 
 
 ## Recipes
 
-A recipe describe the operation of monitoring. This is how a recipe looks like:
+A recipe describes the operation of monitoring. This is how a recipe looks like:
 
 ```json
 {
@@ -221,7 +219,7 @@ This action allows you to specify multiple slack webhooks to alert different roo
 
 ## Sandbox
 
-For test propouses you can use our sandbox to create an initial test environment:
+For test purposes, you can use our sandbox to create an initial test environment:
 
 ```bash
 cd _sandbox
@@ -231,7 +229,7 @@ sudo ./sandbox.sh up -d
 
 Our sandbox will use docker-compose to run elastic-search and kibana containers.
 
-After containers are running, you should need import some [sample data](https://www.elastic.co/guide/en/kibana/current/tutorial-load-dataset.html):
+After getting containers running, you need to import some [sample data](https://www.elastic.co/guide/en/kibana/current/tutorial-load-dataset.html):
 
 Add sample index mapping at http://localhost:5601/app/kibana#/dev_tools/console
 
@@ -259,7 +257,7 @@ PUT /shakespeare
 }
 ```
 
-Add the @timestamp ingest to automatic include timestamp information in you data.
+Add the @timestamp ingest to automatic, and include timestamp information in you data.
 
 ```http
 PUT _ingest/pipeline/timestamp
